@@ -61,3 +61,21 @@ gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
 gem 'execjs'
 gem 'therubyracer'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 4.0'
+end
+
+group :test do
+  gem 'database_cleaner-active_record'
+end
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end
