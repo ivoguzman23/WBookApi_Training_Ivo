@@ -52,8 +52,6 @@ group :test do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-<<<<<<< HEAD
-=======
 
 gem 'devise'
 gem 'devise-jwt', '~> 0.6.0'
@@ -63,4 +61,3 @@ gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
 gem 'execjs'
 gem 'therubyracer'
->>>>>>> kickoff-api
