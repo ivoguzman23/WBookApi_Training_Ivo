@@ -26,7 +26,6 @@ describe Rent, type: :model do
   end
 
   describe '#create' do
-
     context 'When the from is nil' do
       subject(:rent) do
         build(:rent, from: nil)
@@ -62,7 +61,5 @@ describe Rent, type: :model do
         is_expected.to be_invalid
       end
     end
-
   end
-
 end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
                sessions: 'sessions',
                registrations: 'registrations'
              }
-  
+
   # POST '/api/v1/users', to: 'registrations#create'
   # For details on  the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
