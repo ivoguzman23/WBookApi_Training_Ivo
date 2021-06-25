@@ -12,11 +12,11 @@ describe Rent, type: :model do
   end
 
   it do
-    should validate_presence_of(:user_id)
+    should validate_presence_of(:user)
   end
 
   it do
-    should validate_presence_of(:book_id)
+    should validate_presence_of(:book)
   end
 
   subject(:rent) do
@@ -46,18 +46,18 @@ describe Rent, type: :model do
       end
     end
 
-    context 'When the user_id is nil' do
+    context 'When the user is nil' do
       subject(:rent) do
-        build(:rent, user_id: nil)
+        build(:rent, user: nil)
       end
       it 'is not valid' do
         is_expected.to be_invalid
       end
     end
 
-    context 'When the book_id is nil' do
+    context 'When the book is nil' do
       subject(:rent) do
-        build(:rent, book_id: nil)
+        build(:rent, book: nil)
       end
       it 'is not valid' do
         is_expected.to be_invalid
