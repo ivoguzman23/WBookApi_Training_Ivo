@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Book, type: :model do
@@ -22,17 +24,17 @@ describe Book, type: :model do
 
   subject(:book) do
     Book.new(
-        genre: genre, author: author, image: image, title: title,
-        publisher: publisher, year: year
+      genre: genre, author: author, image: image, title: title,
+      publisher: publisher, year: year
     )
   end
 
-  let(:genre)            { Faker::Lorem.word}
+  let(:genre)            { Faker::Lorem.word }
   let(:author)           { Faker::Name.name }
   let(:image)            { Faker::Internet.domain_name }
-  let(:title)            { Faker::Lorem.word}
+  let(:title)            { Faker::Lorem.word }
   let(:publisher)        { Faker::Company.name }
-  let(:year)             { Faker::Date}
+  let(:year)             { Faker::Date }
 
   it do
     is_expected.to be_valid
@@ -56,35 +58,35 @@ describe Book, type: :model do
     end
 
     context 'When the image is nil' do
-        let(:image) { nil }
-  
-        it do
-          is_expected.to be_invalid
-        end
+      let(:image) { nil }
+
+      it do
+        is_expected.to be_invalid
+      end
     end
 
     context 'When the title is nil' do
-        let(:title) { nil }
-  
-        it do
-          is_expected.to be_invalid
-        end
+      let(:title) { nil }
+
+      it do
+        is_expected.to be_invalid
+      end
     end
 
     context 'When the publisher is nil' do
-        let(:publisher) { nil }
-  
-        it do
-          is_expected.to be_invalid
-        end
+      let(:publisher) { nil }
+
+      it do
+        is_expected.to be_invalid
+      end
     end
 
     context 'When the year is nil' do
-        let(:year) { nil }
-  
-        it do
-          is_expected.to be_invalid
-        end
-    end   
+      let(:year) { nil }
+
+      it do
+        is_expected.to be_invalid
+      end
+    end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe User, type: :model do
@@ -24,16 +26,14 @@ describe User, type: :model do
   it do
     is_expected.to be_valid
   end
-=begin
-  describe '#generate_verification_code' do
-    context 'When the user is created' do
-      it 'generates a random verification code' do
-        user.save!
-        expect(user.verification_code).to be_present
-      end
-    end
-  end
-=end
+  #   describe '#generate_verification_code' do
+  #     context 'When the user is created' do
+  #       it 'generates a random verification code' do
+  #         user.save!
+  #         expect(user.verification_code).to be_present
+  #       end
+  #     end
+  #   end
   describe '#create' do
     context 'When the first_name is nil' do
       let(:first_name) { nil }
@@ -52,4 +52,3 @@ describe User, type: :model do
     end
   end
 end
-
