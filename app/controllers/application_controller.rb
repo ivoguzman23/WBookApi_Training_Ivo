@@ -3,9 +3,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
-  def render_resource(resource)    
+  def render_resource(resource)
     return render json: resource if resource.errors.empty?
-    
+
     validation_error(resource)
   end
 
