@@ -61,3 +61,5 @@ gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
 gem 'execjs'
 gem 'therubyracer'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'kaminari'
