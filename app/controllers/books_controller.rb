@@ -1,10 +1,13 @@
 class BooksController < ApplicationController
+  #before_action :authenticate_user!
+
   def index
-    render json: Book
+    @books = Book.all
+    render json: @books
   end
 
   def show
     @book = Book.find(params[:id])
-    render json: @book
+    render json: @book, status: 200
   end
 end

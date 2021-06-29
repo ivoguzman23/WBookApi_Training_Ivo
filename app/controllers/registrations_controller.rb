@@ -5,7 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-
     resource.save
     if resource.active_for_authentication?
       set_flash_message! :notice, :signed_up
@@ -24,4 +23,5 @@ class RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(_resource)
     login_path
   end
+  
 end
