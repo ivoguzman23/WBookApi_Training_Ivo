@@ -42,6 +42,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'byebug'
 end
 group :test do
   # Adds support for Capybara system testing and selenium driver
@@ -49,6 +50,13 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'byebug'
+end
+group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
+end
+group :development, :test do
+  gem 'shoulda-matchers'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -63,3 +71,6 @@ gem 'kaminari'
 gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
 gem 'therubyracer'
+gem 'factory_bot'
+gem "factory_bot_rails"
+gem 'faker'
