@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
-require './spec/shared_contexts/shared_context.rb'
+require './spec/shared_contexts/shared_context'
 
 RSpec.describe BooksController, type: :controller do
   describe 'GET #index' do
@@ -41,7 +43,7 @@ RSpec.describe BooksController, type: :controller do
       let!(:book) { create(:book, id: 1) }
 
       before do
-        get :show, params: { id: 5}
+        get :show, params: { id: 5 }
       end
 
       it 'responds with 404 status' do

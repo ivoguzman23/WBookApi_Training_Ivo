@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
-require './spec/shared_contexts/shared_context.rb'
+require './spec/shared_contexts/shared_context'
 
 describe RentsController, type: :controller do
   include_context 'Authenticated User'

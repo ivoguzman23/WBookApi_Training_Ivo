@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     render json: @book, status: :ok
-    rescue ActiveRecord::RecordNotFound
-      render json: { error: 'Not found' }, status: :not_found
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'Not found' }, status: :not_found
   end
 end
