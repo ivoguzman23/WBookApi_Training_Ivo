@@ -3,6 +3,7 @@
 class RentsController < ApplicationController
   respond_to :json
   before_action :authenticate_user!
+  after_action :send_rent_mail, only: [:create], if: -> { @book }
 
   def index
     @rents = Rent.where(user_id: current_user.id)
@@ -22,5 +23,11 @@ class RentsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render json: { error: 'The book you specified was not found' },
            status: :unprocessable_entity
+  end
+
+  def send_rent_mail
+    user = current_user
+    title = @book[:title]
+    AfterRentEmailWorker.perform_async(user[:email], user[:fist_name], title, @rent[:to])
   end
 end
