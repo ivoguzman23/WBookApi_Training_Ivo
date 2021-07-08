@@ -33,7 +33,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -65,11 +65,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.mailgun.org",
-    :port => 587,
-    :domain => "training.wolox.com.ar",
-    :user_name => "no-reply@training.wolox.com.ar",
-    :password => "rTAtdESqq48Q6hNFhuWbdXCf"
+    authentication: :plain,
+    address: Rails.application.secrets.mailer_address,
+    port: Rails.application.secrets.mailer_port,
+    domain: Rails.application.secrets.mailer_domain,
+    user_name: Rails.application.secrets.mailer_username,
+    password: Rails.application.secrets.mailer_password
   }
 end
