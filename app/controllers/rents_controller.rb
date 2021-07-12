@@ -27,6 +27,6 @@ class RentsController < ApplicationController
   def send_rent_mail
     user = current_user
     title = @book[:title]
-    AfterRentEmailWorker.perform_async(user[:email], user[:first_name], title, @rent[:to])
+    AfterRentEmailWorker.perform_async(user[:email], user[:first_name], title, @rent[:to], user[:locale])
   end
 end

@@ -8,7 +8,7 @@ class SessionsController < Devise::SessionsController
   private
 
   def respond_with(resource, _opts = {})
-    puts current_user.first_name
+    #puts current_user.first_name
     render json: resource
   end
 
