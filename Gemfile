@@ -63,7 +63,6 @@ gem 'dotenv-rails', groups: %i[development test]
 gem 'execjs'
 gem 'factory_bot'
 gem 'factory_bot_rails'
-gem 'faker'
 gem 'ffi', '~> 1.15.3'
 gem 'kaminari'
 gem 'rubocop', '~> 1.17', require: false
