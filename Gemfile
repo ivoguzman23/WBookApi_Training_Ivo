@@ -50,6 +50,12 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
+end
+group :development, :test do
+  gem 'shoulda-matchers'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
@@ -58,6 +64,9 @@ gem 'devise'
 gem 'devise-jwt', '~> 0.6.0'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'execjs'
+gem 'factory_bot'
+gem 'factory_bot_rails'
+gem 'faker'
 gem 'ffi', '~> 1.15.3'
 gem 'kaminari'
 gem 'rubocop', '~> 1.17', require: false
