@@ -32,36 +32,44 @@ describe Rent, type: :model do
       subject(:rent) do
         build(:rent, from: nil)
       end
+
       it 'is not valid' do
         is_expected.to be_invalid
       end
+
     end
 
     context 'When the to is nil' do
       subject(:rent) do
         build(:rent, to: nil)
       end
+
       it 'is not valid' do
         is_expected.to be_invalid
       end
+
     end
 
     context 'When the user is nil' do
       subject(:rent) do
         build(:rent, user: nil)
       end
+
       it 'is not valid' do
         is_expected.to be_invalid
       end
+
     end
 
     context 'When the book is nil' do
       subject(:rent) do
         build(:rent, book: nil)
       end
+
       it 'is not valid' do
         is_expected.to be_invalid
       end
+      
     end
   end
 end
