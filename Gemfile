@@ -74,3 +74,8 @@ gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
 gem 'sidekiq'
 gem 'therubyracer'
+gem 'activeadmin'
+gem 'arbre'
+gem 'formtastic', '~> 4.0'
+gem 'inherited_resources'
+gem 'ransack'
