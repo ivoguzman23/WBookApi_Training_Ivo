@@ -15,6 +15,7 @@ Rails.application.routes.draw do
                    registrations: 'registrations'
                  }
       resources :books, only: %i[index show]
+      resources :rents, only: %i[index create]
     end
   end
 
