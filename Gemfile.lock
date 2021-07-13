@@ -322,6 +322,7 @@ DEPENDENCIES
   devise-jwt (~> 0.6.0)
   dotenv-rails
   execjs
+  factory_bot
   factory_bot_rails
   faker!
   ffi (~> 1.15.3)
@@ -336,7 +337,6 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (~> 5.0)
   selenium-webdriver
-  sidekiq
   shoulda-matchers (~> 4.0)
   spring
   spring-watcher-listen (~> 2.0.0)
