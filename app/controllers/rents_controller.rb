@@ -4,7 +4,7 @@ class RentsController < ApplicationController
   respond_to :json
   before_action :authenticate_user!
   after_action :send_rent_mail, only: [:create], if: -> { @book }
-  after_action :verify_authorized
+  after_action :verify_authorized, except: [:create]
   
   def index
     @rents = Rent.where(user_id: current_user.id)
