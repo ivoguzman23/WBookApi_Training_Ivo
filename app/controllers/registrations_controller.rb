@@ -5,7 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-
     resource.save
     if resource.active_for_authentication?
       set_flash_message! :notice, :signed_up
