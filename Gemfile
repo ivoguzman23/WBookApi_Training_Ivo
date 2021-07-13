@@ -70,7 +70,7 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
 end
 
-group :development,:test do
+group :development, :test do
   gem 'database_cleaner-active_record'
 end
 
