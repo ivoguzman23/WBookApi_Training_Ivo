@@ -5,13 +5,13 @@ class RentsController < ApplicationController
   before_action :authenticate_user!
   after_action :send_rent_mail, only: [:create], if: -> { @book }
   after_action :verify_authorized, except: [:create]
-  
+
   def index
     @rents = Rent.where(user_id: current_user.id)
     return render json: { error: 'The user has no rents' }, status: :not_found if @rents.blank?
 
     authorize @rents
-    render json: @rents    
+    render json: @rents
   end
 
   def create

@@ -73,10 +73,10 @@ gem 'ffi', '~> 1.15.3'
 gem 'formtastic', '~> 4.0'
 gem 'inherited_resources'
 gem 'kaminari'
+gem 'pundit'
 gem 'ransack'
 gem 'redis'
 gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
 gem 'sidekiq'
 gem 'therubyracer'
-gem "pundit"
