@@ -36,7 +36,6 @@ describe Rent, type: :model do
       it 'is not valid' do
         is_expected.to be_invalid
       end
-
     end
 
     context 'When the to is nil' do
@@ -47,7 +46,6 @@ describe Rent, type: :model do
       it 'is not valid' do
         is_expected.to be_invalid
       end
-
     end
 
     context 'When the user is nil' do
@@ -58,7 +56,6 @@ describe Rent, type: :model do
       it 'is not valid' do
         is_expected.to be_invalid
       end
-
     end
 
     context 'When the book is nil' do
@@ -69,7 +66,6 @@ describe Rent, type: :model do
       it 'is not valid' do
         is_expected.to be_invalid
       end
-      
     end
   end
 end

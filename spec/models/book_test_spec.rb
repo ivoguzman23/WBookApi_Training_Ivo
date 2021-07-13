@@ -22,7 +22,7 @@ describe Book, type: :model do
   it do
     should validate_presence_of(:publisher)
   end
-  
+
   it do
     should validate_presence_of(:year)
   end
@@ -68,7 +68,6 @@ describe Book, type: :model do
       it do
         is_expected.to be_invalid
       end
-
     end
 
     context 'When the title is nil' do
@@ -77,7 +76,6 @@ describe Book, type: :model do
       it do
         is_expected.to be_invalid
       end
-
     end
 
     context 'When the publisher is nil' do
@@ -86,7 +84,6 @@ describe Book, type: :model do
       it do
         is_expected.to be_invalid
       end
-
     end
 
     context 'When the year is nil' do
@@ -95,8 +92,6 @@ describe Book, type: :model do
       it do
         is_expected.to be_invalid
       end
-      
     end
-
   end
 end
