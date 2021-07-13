@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(version: 20_210_623_191_517) do
     t.bigint 'book_id'
     t.index ['book_id'], name: 'index_rents_on_book_id'
     t.index ['user_id'], name: 'index_rents_on_user_id'
-
+  end
+  
 ActiveRecord::Schema.define(version: 20_210_622_133_710) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
