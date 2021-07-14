@@ -61,8 +61,10 @@ gem 'execjs'
 gem 'factory_bot'
 gem 'ffi', '~> 1.15.3'
 gem 'kaminari'
+gem 'redis'
 gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
+gem 'sidekiq'
 gem 'therubyracer'
 
 group :development, :test do
