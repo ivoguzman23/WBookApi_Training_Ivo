@@ -7,4 +7,5 @@ class User < ApplicationRecord
          jwt_revocation_strategy: JWTBlacklist
 
   validates :first_name, :last_name, :email, :password, :password_confirmation, :locale, presence: true
+  has_many :rents
 end
