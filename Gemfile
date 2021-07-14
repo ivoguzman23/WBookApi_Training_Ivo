@@ -53,14 +53,20 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+gem 'activeadmin'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'arbre'
 gem 'devise'
 gem 'devise-jwt', '~> 0.6.0'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'execjs'
 gem 'factory_bot'
 gem 'ffi', '~> 1.15.3'
+gem 'formtastic', '~> 4.0'
+gem 'inherited_resources'
 gem 'kaminari'
+gem 'pundit'
+gem 'ransack'
 gem 'redis'
 gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
