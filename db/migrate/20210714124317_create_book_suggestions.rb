@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBookSuggestions < ActiveRecord::Migration[5.2]
   def up
     create_table :book_suggestions do |t|
@@ -12,6 +14,7 @@ class CreateBookSuggestions < ActiveRecord::Migration[5.2]
       t.timestamps
     end
   end
+
   def down
     drop_table :book_suggestions
   end
