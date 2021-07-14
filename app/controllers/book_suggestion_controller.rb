@@ -1,0 +1,2 @@
+class BookSuggestionController < ApplicationController
+end
