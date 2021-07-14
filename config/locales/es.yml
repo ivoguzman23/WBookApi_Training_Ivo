@@ -8,7 +8,14 @@ es:
 
   # rails-i18n I get this from
   #https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/es.yml
-  
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'La validación falló: %{errors}'
+        restrict_dependent_destroy:
+          has_one: No se puede eliminar el registro porque existe un %{record} dependiente
+          has_many: No se puede eliminar el registro porque existen %{record} dependientes
+
   time:
     formats:
       default: "%Y/%m/%d"

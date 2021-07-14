@@ -29,8 +29,3 @@
 # Ignore .env files
 .env
 
-# Ignore Gemfile.lock file
-Gemfile.lock
-
-# Ignore schema.rb file
-/db/schema.rb
