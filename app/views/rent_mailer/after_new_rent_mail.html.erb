@@ -1,5 +1,9 @@
-<h1> Hola <%=@first_name%> ! </h1>
+<h1> <%= t :hi %> <%=@first_name%> </h1>
+<h1><%= t :rentInformation %>:</h1>
 
-<p>Fecha de creacion de rent: <%=@first_name%> </p>
-<p>Libro rentado: <%=@title%> </p>
-<p>Fecha de fin: <%=@to%> </p>
+<ul>
+    <li><%= t :bookTitle %> : <%= @title %> </li>
+    <li><%= t :to %> : <%= @to %> </li>
+</ul>
+
+<p><%= t :gratitude %> ! </p>

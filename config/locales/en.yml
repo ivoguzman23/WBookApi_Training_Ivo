@@ -30,4 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hi: "Hello"
+  rent_subject: "Your new rent"
+  rentInformation: "Rent information"
+  bookTitle: "Book title"
+  to: "To"
+  gratitude: "Thank you"

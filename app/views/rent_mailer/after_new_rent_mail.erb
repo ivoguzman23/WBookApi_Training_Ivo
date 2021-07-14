@@ -1,5 +1,7 @@
-Hola <%=@first_name%> ! 
+<%= t :hi %> <%=@first_name%>
+<%= t :rentInformation %>:
 
-Fecha de creacion de rent: <%=@first_name%> 
-Libro rentado: <%=@title%> 
-Fecha de fin: <%=@to%> 
+<%= t :bookTitle %> : <%= @title %>
+<%= t :to %> : <%= @to %>
+
+<%= t :gratitude %> !
