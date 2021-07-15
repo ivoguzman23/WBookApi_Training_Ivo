@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, :password, :password_confirmation, :locale, presence: true
   has_many :rents
+  has_many :book_suggestion
 end

@@ -24,10 +24,21 @@ RSpec.describe BookSuggestionController, type: :controller do
 
   describe 'POST #create' do
     context 'When create a book suggestion' do
-      let!(:book_suggestion) { create(:book_suggestion) }
+      let!(:book_suggestion) { create(:book_suggestion) } 
+      let!(:params) do 
+        {
+          "bookSuggestion": {
+              "author": book_suggestion.author,
+              "title": book_suggestion.title,
+              "link": book_suggestion.link,
+              "publisher": book_suggestion.publisher,
+              "year": book_suggestion.year
+          }
+        } 
+      end
 
-      subject do
-        post :create
+      before do
+        post :create, params: params
       end
 
       it 'responds with the book suggestion json' do
@@ -35,8 +46,8 @@ RSpec.describe BookSuggestionController, type: :controller do
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
 
-      it 'responds with 200 status' do
-        expect(response).to have_http_status(:ok)
+      it 'responds with 201 status' do
+        expect(response).to have_http_status(:created)
       end
     end
 
@@ -66,7 +77,7 @@ RSpec.describe BookSuggestionController, type: :controller do
       end
     end
 
-    context 'When the title is nill' do
+    context 'When the title is nil' do
       let!(:book_suggestion) { build(:book_suggestion, title: nil) }
 
       subject do
