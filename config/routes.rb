@@ -17,6 +17,7 @@ Rails.application.routes.draw do
                    registrations: 'registrations'
                  }
       resources :books, only: %i[index show]
+      post '/suggestion', to: 'book_suggestion#create'
       resources :rents, only: %i[index create]
     end
   end
