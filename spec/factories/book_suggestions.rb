@@ -5,7 +5,7 @@ FactoryBot.define do
     editorial { Faker::Company.name }
     price { Faker::Number.decimal(l_digits: 2) }
     author { Faker::Book.author }
-    title { Faker::Book.title}
+    title { Faker::Book.title }
     link { 'www.link.com' }
     publisher { Faker::Company.name }
     year { Faker::Number.number(digits: 10).to_s }

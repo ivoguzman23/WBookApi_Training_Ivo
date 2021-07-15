@@ -5,10 +5,14 @@ class BookSuggestionController < ApplicationController
 
   def index
     @booksuggestions = BookSuggestion.all
-    return render json: { error: 'There are no book suggestions to show' }, status: :not_found if @booksuggestions.blank?
+    if @booksuggestions.blank?
+      return render json: { error: 'There are no book suggestions to show' },
+                    status: :not_found
+    end
+
     render json: @booksuggestions
   end
-  
+
   def create
     @book_suggestion = BookSuggestion.create(book_suggestion_params)
     response.status = 201
