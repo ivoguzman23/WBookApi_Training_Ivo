@@ -23,20 +23,20 @@ RSpec.describe BookSuggestionController, type: :controller do
   end
 
   describe 'POST #create' do
-    let!(:params) do 
+    let!(:params) do
       {
         "bookSuggestion": {
-            "author": book_suggestion.author,
-            "title": book_suggestion.title,
-            "link": book_suggestion.link,
-            "publisher": book_suggestion.publisher,
-            "year": book_suggestion.year
+          "author": book_suggestion.author,
+          "title": book_suggestion.title,
+          "link": book_suggestion.link,
+          "publisher": book_suggestion.publisher,
+          "year": book_suggestion.year
         }
-      } 
+      }
     end
 
     context 'When create a book suggestion' do
-      let!(:book_suggestion) { create(:book_suggestion) } 
+      let!(:book_suggestion) { create(:book_suggestion) }
       before do
         post :create, params: params
       end
