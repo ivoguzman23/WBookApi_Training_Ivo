@@ -3,10 +3,22 @@
 class BookSuggestionController < ApplicationController
   respond_to :json
 
+  def index
+    @booksuggestions = BookSuggestion.all
+    if @booksuggestions.blank?
+      return render json: { error: 'There are no book suggestions to show' },
+                    status: :not_found
+    end
+
+    render json: @booksuggestions
+  end
+
   def create
-    @book_suggestion = BookSuggestion.create(book_suggestion_params)
-    response.status = 201
-    render json: @book_suggestion
+    all_params =  book_suggestion_params.merge(user: current_user)
+    @book_suggestion = BookSuggestion.new(all_params)
+    return render json: @book_suggestion, status: :created if @book_suggestion.save
+
+    render json: @book_suggestion.errors, status: :unprocessable_entity
   end
 
   def book_suggestion_params

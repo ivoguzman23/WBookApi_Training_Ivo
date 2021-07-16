@@ -10,6 +10,7 @@ class CreateBookSuggestions < ActiveRecord::Migration[5.2]
       t.string :link
       t.string :publisher
       t.string :year
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

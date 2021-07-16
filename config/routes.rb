@@ -18,6 +18,7 @@ Rails.application.routes.draw do
                  }
       resources :books, only: %i[index show]
       post '/suggestion', to: 'book_suggestion#create'
+      get '/suggestion', to: 'book_suggestion#index'
       resources :rents, only: %i[index create]
     end
   end
