@@ -23,20 +23,20 @@ RSpec.describe BookSuggestionController, type: :controller do
   end
 
   describe 'POST #create' do
+    let!(:params) do 
+      {
+        "bookSuggestion": {
+            "author": book_suggestion.author,
+            "title": book_suggestion.title,
+            "link": book_suggestion.link,
+            "publisher": book_suggestion.publisher,
+            "year": book_suggestion.year
+        }
+      } 
+    end
+
     context 'When create a book suggestion' do
       let!(:book_suggestion) { create(:book_suggestion) } 
-      let!(:params) do 
-        {
-          "bookSuggestion": {
-              "author": book_suggestion.author,
-              "title": book_suggestion.title,
-              "link": book_suggestion.link,
-              "publisher": book_suggestion.publisher,
-              "year": book_suggestion.year
-          }
-        } 
-      end
-
       before do
         post :create, params: params
       end
@@ -54,39 +54,51 @@ RSpec.describe BookSuggestionController, type: :controller do
     context 'When the author is nil' do
       let!(:book_suggestion) { build(:book_suggestion, author: nil) }
 
-      subject do
-        post :create
+      before do
+        post :create, params: params
       end
 
       it 'responds with error' do
         expected = book_suggestion.errors.to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
+      end
+
+      it 'responds with 422 status' do
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
 
     context 'When the link is nil' do
       let!(:book_suggestion) { build(:book_suggestion, link: nil) }
 
-      subject do
-        post :create
+      before do
+        post :create, params: params
       end
 
       it 'responds with error' do
         expected = book_suggestion.errors.to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
+      end
+
+      it 'responds with 422 status' do
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
 
     context 'When the title is nil' do
       let!(:book_suggestion) { build(:book_suggestion, title: nil) }
 
-      subject do
-        post :create
+      before do
+        post :create, params: params
       end
 
       it 'responds with error' do
         expected = book_suggestion.errors.to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
+      end
+
+      it 'responds with 422 status' do
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
