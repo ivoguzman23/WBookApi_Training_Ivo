@@ -101,5 +101,22 @@ RSpec.describe BookSuggestionController, type: :controller do
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
+
+    context 'When the user is guest' do
+      let!(:book_suggestion) { build(:book_suggestion, user: nil) }
+
+      before do
+        post :create, params: params
+      end
+
+      it 'responds with the book suggestion json' do
+        expected = book_suggestion.to_json
+        expect(response.body.to_json) =~ JSON.parse(expected)
+      end
+
+      it 'responds with 201 status' do
+        expect(response).to have_http_status(:created)
+      end
+    end
   end
 end
