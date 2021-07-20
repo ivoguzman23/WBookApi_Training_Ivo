@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 
 class BookSuggestionController < ApplicationController
+  include Wor::Paginate
   respond_to :json
 
   def index
     @booksuggestions = BookSuggestion.all
-    if @booksuggestions.blank?
-      return render json: { error: 'There are no book suggestions to show' },
-                    status: :not_found
-    end
+    return render json: { error: 'There are no book suggestions to show' }, 
+                  status: :not_found if @booksuggestions.blank?
 
-    render json: @booksuggestions
+    render_paginated @booksuggestions
   end
 
   def create
