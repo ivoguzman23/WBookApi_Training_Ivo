@@ -56,7 +56,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'activeadmin'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'arbre'
-gem 'devise'
+#gem 'devise'
+gem 'devise', github: 'heartcombo/devise'
 gem 'devise-jwt', '~> 0.6.0'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'execjs'
@@ -72,6 +73,8 @@ gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
 gem 'sidekiq'
 gem 'therubyracer'
+gem 'omniauth', '1.9.1'
+gem 'omniauth-google-oauth2', '0.8.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
