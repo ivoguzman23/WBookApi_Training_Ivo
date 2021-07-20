@@ -57,14 +57,5 @@ describe User, type: :model do
         is_expected.to be_invalid
       end
     end
-
-    context 'When the password_confirmation is nil' do
-      subject(:user) do
-        build(:user, password_confirmation: nil)
-      end
-      it 'is not valid' do
-        is_expected.to be_invalid
-      end
-    end
   end
 end
