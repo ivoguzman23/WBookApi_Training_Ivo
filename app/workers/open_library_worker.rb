@@ -1,7 +1,9 @@
-class OpenLibraryWorker
-    include Sidekiq::Worker
+# frozen_string_literal: true
 
-    def perform(bibkeys)
-        OpenLibraryService.execute(bibkeys)
-    end
+class OpenLibraryWorker
+  include Sidekiq::Worker
+
+  def perform(bibkeys)
+    OpenLibraryService.execute(bibkeys)
+  end
 end

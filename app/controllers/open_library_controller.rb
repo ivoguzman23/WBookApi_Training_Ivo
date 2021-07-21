@@ -1,9 +1,11 @@
-class OpenLibraryController < ApplicationController
-    include AsyncRequest::ApplicationHelper
-    #respond_to :json
+# frozen_string_literal: true
 
-    def book_info
-        id = execute_async(OpenLibraryService, params[:bibkeys])
-        render json: { id: id, url: async_request.job_url(id) }, status: :accepted
-    end
+class OpenLibraryController < ApplicationController
+  include AsyncRequest::ApplicationHelper
+  # respond_to :json
+
+  def book_info
+    id = execute_async(OpenLibraryService, params[:bibkeys])
+    render json: { id: id, url: async_request.job_url(id) }, status: :accepted
+  end
 end
