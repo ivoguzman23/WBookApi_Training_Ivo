@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RentsController < ApplicationController
+  include Wor::Paginate
   respond_to :json
   before_action :authenticate_user!
   after_action :send_rent_mail, only: [:create], if: -> { @book }
@@ -11,7 +12,7 @@ class RentsController < ApplicationController
     return render json: { error: 'The user has no rents' }, status: :not_found if @rents.blank?
 
     authorize @rents
-    render json: @rents
+    render_paginated @rents
   end
 
   def create
