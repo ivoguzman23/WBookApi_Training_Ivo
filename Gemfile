@@ -70,12 +70,14 @@ gem 'omniauth', '1.9.1'
 gem 'omniauth-google-oauth2', '0.8.0'
 gem 'pundit'
 gem 'ransack'
-gem 'redis'
+gem 'redis', '~> 3.2'
 gem 'rubocop', '~> 1.17', require: false
 gem 'rubocop-rails', require: false
-gem 'sidekiq'
+gem 'sidekiq', '4.0.0'
 gem 'therubyracer'
 gem 'wor-paginate'
+gem 'async_request', '0.0.7'
+gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
