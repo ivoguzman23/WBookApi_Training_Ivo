@@ -2,7 +2,6 @@
 
 class OpenLibraryController < ApplicationController
   include AsyncRequest::ApplicationHelper
-  # respond_to :json
 
   def book_info
     id = execute_async(OpenLibraryService, params[:bibkeys])
